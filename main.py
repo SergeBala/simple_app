@@ -132,7 +132,7 @@ async def echo(message: str = Query(..., description="The message to echo back")
     
     return {
         "original_message": message,
-        "echo": message,
+        "echo": "MOOOOO " + message,
         "length": len(message),
         "timestamp": datetime.utcnow().isoformat(),
         "status": "success"
