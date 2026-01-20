@@ -178,3 +178,51 @@ This project demonstrates:
 - Add comprehensive logging
 - Implement rate limiting
 - Add unit tests and integration tests
+
+## For future sessions running the app locally
+- run the following:
+- source .venv/bin/activate
+- python main.py
+
+### Run with Docker
+
+#### Option 1: Using Docker Commands
+
+1. Build the Docker image:
+```bash
+docker build -t echo-api .
+```
+
+2. Run the container:
+```bash
+docker run -p 8000:8000 echo-api
+```
+
+3. Stop the container:
+```bash
+# Press Ctrl+C in the terminal
+```
+
+4. Access at `http://localhost:8000`
+
+#### Option 2: Using Docker Compose (Recommended)
+
+1. Build and start the container:
+```bash
+docker-compose up --build
+```
+
+2. Access at `http://localhost:8000`
+
+3. Stop the container:
+```bash
+# Press Ctrl+C, then run:
+docker-compose down
+```
+
+**Quick Reference:**
+- `docker-compose up --build` - Rebuild image and start container
+- `docker-compose up` - Start container (using existing image)
+- `docker-compose up -d` - Start in background (detached mode)
+- `docker-compose down` - Stop and remove container
+- `docker-compose logs -f` - View container logs

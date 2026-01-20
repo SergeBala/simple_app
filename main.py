@@ -75,7 +75,7 @@ async def read_root():
     </head>
     <body>
         <div class="container">
-            <h1>🔊 Echo Service</h1>
+            <h1>🔊 Echo App</h1>
             <p style="text-align: center; color: #666;">Enter a message and get it echoed back!</p>
             
             <div class="input-group">
@@ -142,6 +142,11 @@ async def echo(message: str = Query(..., description="The message to echo back")
 async def health_check():
     """Health check endpoint for monitoring"""
     return {"status": "healthy", "service": "echo-api"}
+
+@app.get("/moo")
+async def moo():
+    """Moo endpoint for mooing"""
+    return {"status": "moooooooooooo!", "service": "echo-api"}
 
 if __name__ == "__main__":
     import uvicorn
